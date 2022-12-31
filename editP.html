@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Editar</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/icon.ico" type="image/x-icon">
+
+    <!-- Link CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+
+        
+        <!-- Inicio del Header -->
+        <!-- insertar Header -->
+        <!-- Fin del Header -->
+
+
+        <div class="container">
+            <br><br>
+            <div class="row flex-lg-row align-items-center g-4">
+                <h3 class="fw-bold"> ¡Hola, <strong>Nombre Apellido!</strong> <br> Estás editando tu producto No. ID</h3>
+                <p>Por favor rellena los campos correctamente, ya que esa información servirá para poder venderlo.</p>
+                <div class="col-12 col-lg-5 align-items-center text-center justify-content-center">
+                    <img class="img-fluid" src="assets/img/logo3.png" alt="" id="change-img">
+                    <br>
+                    <p>Imagen actual</p>
+                </div>
+                <div class="col-12 col-lg-7">
+
+                    <form action="" method="">
+                        <div class="col form-floating mb-3">
+                          <input type="text" class="form-control" id="floatingName" placeholder="First name" name="animal" required>
+                          <label for="floatingName" class="ms-2">Nombre</label>
+                        </div>
+                        <div class="row flex-wrap">
+                            <div class="col form-floating">
+                                <input type="text" class="form-control"  id="floatingLN" placeholder="Last name" name="raza" required>
+                                <label for="floatingLN" class="ms-2">Precio</label>
+                            </div>
+                            <div class="col form-floating mb-3">
+                              <input type="text" class="form-control" id="floatingName" placeholder="First name" name="edad" required>
+                              <label for="floatingName" class="ms-2">Cantidad</label>
+                            </div>
+                        </div>
+                        <div class="row flex-wrap mb-3">
+                            <div class="col">
+                                <label for="" class="mb-1">Categoría</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="Accesorios">Accesorios</option>
+                                    <option value="Medicamentos">Medicamentos</option>
+                                  </select>
+                            </div>
+                            <div class="col">
+                               <label for="" class="mb-1">¿Poner en oferta?</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="no">No</option>
+                                    <option value="si">Si</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" placeholder="Descripción" style="max-height: 100px; min-height: 60px;" name="detalles"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Imagen:</label>
+                            <input class="form-control" type="file" id="formFile foto" name="evidencia" accept="image/x-png,image/gif,image/jpeg,image/jpg" onchange="vista_preliminar(event)">
+                        </div>
+                        
+                        <button class="w-100 btn btn-lg btn-primary mb-2" type="submit"><i class="fa-solid fa-pen-to-square"></i> Guardar Cambios</button>
+                        <a href="#modalDelete" class="w-100 btn btn-lg btn-danger"  data-bs-toggle="modal" role="button"><i class="fa-solid fa-trash"></i> Eliminar Producto</a>
+                        
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!--Formularios: cerrar sesion-->
+    <div class="modal fade" id="modalDelete" aria-hidden="true" aria-labelledby="modalLogoutLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-md-down">
+            <div class="modal-content p-3">
+                <div class="modal-header">
+                    <h3 class="modal-title fw-bold" id="modalLogoutLabel">¡Confirmación! </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="fw-bold">¿Está seguro que desea eliminar este producto? <i class="fa-regular fa-face-frown-open"></i></p>
+                </div>
+                <div class="modal-footer">
+                    <form action="" method="">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i> Cancelar</button>
+                        <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash"></i> Si, Eliminar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seccion footer -->
+    
+    <!-- insertar footer -->
+
+    <!-- Fin footer -->
+    <!-- Vista previa evidencia -->
+    <script>
+        let vista_preliminar = (event) =>{
+            let leer_img = new FileReader();
+            let id_img = document.getElementById('change-img');
+            leer_img.onload = () =>{
+                if (leer_img.readyState == 2){
+                    id_img.src = leer_img.result
+                }
+            }
+            leer_img.readAsDataURL(event.target.files[0])
+        }
+    </script>
+
+    <!-- Link JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <!-- Link FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/d15e2340a2.js" crossorigin="anonymous"></script>
+</body>
+</html>

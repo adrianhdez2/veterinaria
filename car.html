@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Carrito</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/icon.ico" type="image/x-icon">
+
+    <!-- Link CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- inicio header -->
+        <!-- insertar header -->
+        <!-- Fin del Header -->
+
+
+
+
+        <div class="container">
+            <br>
+            <h3 class="fw-bold">Mi carrito</h3>
+            <hr>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col"></th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    
+                    <th scope="row" colspan="2"> <!-- Detalles del producto -->
+                        <img src="assets/img/logo.png" alt="" width="50" height="50">
+                        
+                        Nombre
+                        <br>
+                        Precio $ 100.00
+                        <form action="" method="" class="" >
+                            <input type="hidden" value="" name="codigo">
+                            <button class="btn btn-link btn-sm text">Eliminar</button>
+                        </form>
+                    </th> 
+                    <td colspan="" class=""> <!-- cantidad -->
+                        2
+                    </td>
+                    <td>$ 200.00</td>
+                  </tr>
+                  
+                  <tr class="table-active">
+                    <td></td>
+                    <td colspan="2" class="text-end"><strong>ENVÍO</strong></td>
+                    <td>$ 80.00</td>
+                  </tr>
+
+                  <tr class="table-active">
+                    <td></td>
+                    <td colspan="2" class="text-end"><strong>TOTAL</strong></td>
+                    <td>$ 280.00</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="container-fluid d-flex flex-row-reverse pb-2">
+                  <a href="#" class="btn btn-danger "  data-bs-toggle="modal" role="button">Vaciar carrito</a>
+
+              </div>
+              <div class="container-fluid d-flex flex-row-reverse">
+                  <a href="#modalPayment" class="btn btn-success"  data-bs-toggle="modal" role="button">Comprar</a>
+                  <a href="productos.html" class="btn btn-warning me-2"  data-bs-toggle="modal" role="button">Ver más productos</a>
+
+              </div>
+        </div>
+
+            <!--Formularios: Payment-->
+        <div class="modal fade" id="modalPayment" aria-hidden="true" aria-labelledby="modalPaymentLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen-md-down">
+                <div class="modal-content p-3">
+                    <div class="modal-header border-bottom-0">
+                        <h3 class="modal-title fw-bold" id="modalPaymentLabel">Procesar compra</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="cartComprar.php" method="POST">
+                            <h5 class="fw-bold">Dirección de envío</h5>
+                            <div class="row g-2">
+                                <div class="form-floating mb-3 col-5">
+                                    <input class="form-control" id="floatingNext" name="next" type="text" placeholder="Número exterior" maxlength="40" required/>
+                                    <label for="floatingNext">Número exterior</label>
+                                </div>
+                                <div class="form-floating mb-3 col-7">
+                                    <input class="form-control" id="floatingCp" name="cp" type="text" placeholder="Código postal" maxlength="40" required/>
+                                    <label for="floatingCp">Código postal</label>
+                                </div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="floatingCalle" name="calle" type="text" placeholder="Calle" maxlength="128" required/>
+                                <label for="floatingCalle">Calle</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="floatingColonia" name="colonia" type="text" placeholder="Colonia" maxlength="40" required/>
+                                <label for="floatingColonia">Colonia</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="floatingMunicipio" name="municipio" type="text" placeholder="Municipio" maxlength="40" required/>
+                                <label for="floatingMunicipio">Municipio</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="floatingEntidad" name="entidad" type="text" placeholder="Entidad federativa" maxlength="40" required/>
+                                <label for="floatingEntidad">Entidad federativa</label>
+                            </div>
+                            <hr class="my-4">
+                            <h5 class="fw-bold">Resumen</h5>
+                            <h6>Total: <strong>$ 280.00</strong></h6>
+                            
+                            <button class="w-100 btn btn-lg btn-primary" type="submit">Pagar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Seccion footer -->
+    <!-- insertar footer -->
+    <!-- Fin footer -->
+
+
+    <!-- Link JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <!-- Link FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/d15e2340a2.js" crossorigin="anonymous"></script>
+</body>
+</html>
